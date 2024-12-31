@@ -1,0 +1,34 @@
+@import 'variables';
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-family: $font-primary;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: $transition;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  &--primary {
+    background: $primary-gradient;
+    color: white;
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+  }
+  
+  &--outline {
+    background: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+  }
+}

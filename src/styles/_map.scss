@@ -1,0 +1,58 @@
+@import 'variables';
+
+.map {
+  padding: 4rem 0;
+  background: white;
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 3rem;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &__info {
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: $light-bg;
+      border-radius: 12px;
+      
+      svg {
+        color: $primary-color;
+        font-size: 1.5rem;
+        margin-top: 0.25rem;
+      }
+      
+      h3 {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+        font-family: $font-heading;
+      }
+      
+      p {
+        color: $text-color;
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  &__iframe {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
