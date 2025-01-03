@@ -1,9 +1,15 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaUserMd, FaList, FaChevronDown } from 'react-icons/fa';
-import Button from './Button';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaClock, FaList, FaChevronDown } from "react-icons/fa";
+import Button from "./Button";
 
-export default function DoctorCard({ name, specialty, image, expertise }) {
+export default function DoctorCard({
+  name,
+  specialty,
+  image,
+  expertise,
+  timings = "Mon-Fri: 9AM-5PM",
+}) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -18,27 +24,26 @@ export default function DoctorCard({ name, specialty, image, expertise }) {
       <div className="info">
         <h3>{name}</h3>
         <p>{specialty}</p>
-        
-        {expertise && (
-          <Button 
-            variant="outline"
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? 'Show Less' : 'Read More'}
+        <div className="card-actions">
+          <Button variant="outline" onClick={() => setIsExpanded(!isExpanded)}>
+            {isExpanded ? "Show Less" : "Read More"}
             <FaChevronDown
               style={{
-                transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)',
-                transition: 'transform 0.3s ease'
+                transform: isExpanded ? "rotate(180deg)" : "rotate(0)",
+                transition: "transform 0.3s ease",
               }}
             />
           </Button>
-        )}
-        
+          <div className="timings">
+            <FaClock />
+            <span>{timings}</span>
+          </div>
+        </div>
         <AnimatePresence>
           {isExpanded && expertise && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="expertise"
             >
@@ -51,7 +56,7 @@ export default function DoctorCard({ name, specialty, image, expertise }) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <FaList size={12} style={{ marginRight: '8px' }} />
+                    <FaList size={12} style={{ marginRight: "8px" }} />
                     {item}
                   </motion.li>
                 ))}

@@ -1,0 +1,30 @@
+@import 'variables';
+
+.doctor-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  
+  .filter-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: 2px solid $primary-color;
+    background: transparent;
+    color: $primary-color;
+    font-family: $font-primary;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition;
+    
+    &:hover {
+      background: rgba($primary-color, 0.1);
+    }
+    
+    &.active {
+      background: $primary-color;
+      color: white;
+    }
+  }
+}
