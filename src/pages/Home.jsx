@@ -39,7 +39,7 @@ const services = [
 
 const featuredDoctors = [
   {
-    name: 'Dr. Sarah Johnson',
+    name: 'Dr. Syed Maqbool',
     specialty: 'Cardiologist',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300',
     expertise: [

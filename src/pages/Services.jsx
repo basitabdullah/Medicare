@@ -1,69 +1,8 @@
 import { motion } from 'framer-motion';
 import ServiceCard from '../components/ServiceCard';
 import Footer from '../components/Footer';
+import { services } from '../assets/Servicesdata';
 
-const services = [
-  {
-    title: 'Emergency Care',
-    description: '24/7 emergency medical services with state-of-the-art facilities.',
-    features: [
-      'Round-the-clock emergency response',
-      'Advanced life support ambulances',
-      'Trauma care center',
-      'Critical care specialists'
-    ]
-  },
-  {
-    title: 'Telemedicine',
-    description: 'Virtual consultations from the comfort of your home.',
-    features: [
-      'Video consultations',
-      'Digital prescriptions',
-      'Remote monitoring',
-      'Secure patient portal'
-    ]
-  },
-  {
-    title: 'Specialized Care',
-    description: 'Advanced specialized medical treatments across various disciplines.',
-    features: [
-      'Cardiology',
-      'Neurology',
-      'Orthopedics',
-      'Oncology'
-    ]
-  },
-  {
-    title: 'Laboratory Services',
-    description: 'Comprehensive diagnostic testing and analysis.',
-    features: [
-      'Advanced diagnostics',
-      'Quick result delivery',
-      'Home sample collection',
-      'Online reports access'
-    ]
-  },
-  {
-    title: 'Rehabilitation',
-    description: 'Complete rehabilitation services for optimal recovery.',
-    features: [
-      'Physical therapy',
-      'Occupational therapy',
-      'Speech therapy',
-      'Sports rehabilitation'
-    ]
-  },
-  {
-    title: 'Mental Health',
-    description: 'Professional mental health services and counseling.',
-    features: [
-      'Individual therapy',
-      'Group counseling',
-      'Psychiatric care',
-      'Stress management'
-    ]
-  }
-];
 
 export default function Services() {
   return (
