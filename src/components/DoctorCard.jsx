@@ -8,7 +8,7 @@ export default function DoctorCard({
   specialty,
   image,
   expertise,
-  timings = "Mon-Fri: 9AM-5PM",
+  timings = 'Mon-Fri 2:00pm to 4:00pm',
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
