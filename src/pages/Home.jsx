@@ -1,123 +1,128 @@
-import { motion } from 'framer-motion';
-import ServiceCard from '../components/ServiceCard';
-import DoctorCard from '../components/DoctorCard';
-import Map from '../components/Map';
-import Footer from '../components/Footer';
+import { motion } from "framer-motion";
+import ServiceCard from "../components/ServiceCard";
+import DoctorCard from "../components/DoctorCard";
+import Map from "../components/Map";
+import Footer from "../components/Footer";
+import { useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const services = [
-  {
-    title: 'Emergency Care',
-    description: '24/7 emergency services with state-of-the-art facilities.',
-    features: [
-      'Round-the-clock emergency response',
-      'Advanced life support ambulances',
-      'Trauma care center',
-      'Critical care specialists'
-    ]
-  },
-  {
-    title: 'Telemedicine',
-    description: 'Virtual consultations from the comfort of your home.',
-    features: [
-      'Video consultations',
-      'Digital prescriptions',
-      'Remote monitoring',
-      'Secure patient portal'
-    ]
-  },
-  {
-    title: 'Specialized Care',
-    description: 'Advanced treatments across multiple specialties.',
-    features: [
-      'Cardiology',
-      'Neurology',
-      'Orthopedics',
-      'Oncology'
-    ]
-  }
-];
-
-const featuredDoctors = [
-  {
-    name: 'Dr. Syed Maqbool',
-    specialty: 'Cardiologist',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300',
-    expertise: [
-      'Interventional Cardiology',
-      'Heart Failure Management',
-      'Cardiac Rehabilitation',
-      'Preventive Cardiology'
-    ]
-  },
-  {
-    name: 'Dr. Michael Chen',
-    specialty: 'Neurologist',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300',
-    expertise: [
-      'Movement Disorders',
-      'Epilepsy Treatment',
-      'Stroke Management',
-      'Neuromuscular Disease'
-    ]
-  },
-  {
-    name: 'Dr. Emily Williams',
-    specialty: 'Pediatrician',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=300',
-    expertise: [
-      'Newborn Care',
-      'Developmental Pediatrics',
-      'Childhood Immunizations',
-      'Behavioral Health'
-    ]
-  }
-];
+// Import data from data files
+import { services } from "../assets/Servicesdata";
+import { doctors } from "../assets/Doctorsdata";
 
 export default function Home() {
+  const scrollRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start start", "end end"],
+  });
+
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <section className="hero">
+    <div ref={scrollRef} className="overflow-x-hidden">
+      <section className="hero relative overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute w-full h-full object-cover z-0 opacity-50"
+        >
+          <source src="/path-to-your-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <motion.div
+          className="absolute top-20 right-10 w-20 h-20 rounded-full bg-blue-500/20"
+          animate={{
+            y: [0, 20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 text-center px-4"
         >
           <h1>Modern Healthcare for Everyone</h1>
-          <p>Experience world-class medical care with cutting-edge technology and compassionate professionals</p>
+          <p>
+            Experience world-class medical care with cutting-edge technology and
+            compassionate professionals
+          </p>
         </motion.div>
       </section>
 
-      <section className="services">
-        <div className="container">
+      <section className="services relative">
+        <motion.div
+          className="absolute left-0 top-0 w-full h-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(230,244,255,0.5) 100%)",
+            opacity: useTransform(scrollYProgress, [0, 0.3], [0, 1]),
+          }}
+        />
+
+        <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            className="text-center"
           >
             Our Services
           </motion.h2>
           <div className="services__grid">
-            {services.map((service, index) => (
+            {services.slice(0, 6).map((service, index) => (
               <ServiceCard key={service.title} {...service} />
             ))}
           </div>
+          <button
+            className="see-more-button"
+            onClick={() => navigate("/services")}
+          >
+            See More Services
+          </button>
         </div>
       </section>
 
-      <section className="doctors">
-        <div className="container">
+      <section className="doctors relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "linear-gradient(45deg, rgba(66,153,225,0.1) 0%, rgba(129,230,217,0.1) 100%)",
+            opacity: useTransform(scrollYProgress, [0.3, 0.6], [0, 1]),
+          }}
+        />
+
+        <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            className="text-center"
           >
             Meet Our Doctors
           </motion.h2>
           <div className="doctors__grid">
-            {featuredDoctors.map((doctor) => (
+            {doctors.slice(0, 6).map((doctor) => (
               <DoctorCard key={doctor.name} {...doctor} />
             ))}
           </div>
+          <button
+            className="see-more-button"
+            onClick={() => navigate("/doctors")}
+          >
+            See More Doctors
+          </button>
         </div>
       </section>
 

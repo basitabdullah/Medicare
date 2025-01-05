@@ -11,6 +11,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  max-width: 150px;
   
   &--primary {
     background: $primary-gradient;

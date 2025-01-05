@@ -16,7 +16,7 @@ export default function About() {
     <>
       <section className="about">
         <div className="container">
-          <motion.div 
+          <motion.div
             className="about__hero"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function About() {
             >
               <h2>Leading Healthcare Provider</h2>
               <p>
-                Founded in 1995, HealthCare has been at the forefront of medical excellence for over 25 years. Our commitment to providing exceptional healthcare services has made us one of the most trusted medical institutions in the region.
+              MEDICARE is the pioneer in the field of imaging and pathology in Jammu & Kashmir. At a time when the healthcare of Valley was in its infancy, MEDICARE started its operations from the Kara nagar in the year 1995. The journey which started with an USG machine has reached a stage where MEDICARE today is in top league in terms of the range and quality of diagnostic facilities with state of art facilities like PET CT, 3TESLA MRI, 192 Slice/Sec CT Scan in house. Now we have two fully equipped centres located at Karanagar and Kakasari. Both the centres are spacious and have complete range of diagnostic facilities in fields of Nuclear Medicine, radiology, cardiology, pathology, and Maternity.  We also now have a fully equipped hospital which serves thousands of patients a day. The experience and patient loyalty gained over the last 24 years has made us a top hospital and diagnostic facility in the state of Jammu & Kashmir. 
               </p>
               <p>
                 We believe in a patient-first approach, combining cutting-edge technology with compassionate care to ensure the best possible outcomes for our patients.

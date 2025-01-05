@@ -1,0 +1,116 @@
+@import "./variables";
+
+.diagnostics {
+  padding: 4rem 0;
+  background: $light-bg;
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 3rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $text-color;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba($primary-color, 0.15);
+  }
+
+  .image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba($primary-color, 0.9);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+
+  .content {
+    padding: 1.5rem;
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-family: $font-heading;
+      font-weight: 600;
+    }
+
+    p {
+      color: $text-color;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $text-color;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+
+        svg {
+          color: $primary-color;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    
+  }
+}

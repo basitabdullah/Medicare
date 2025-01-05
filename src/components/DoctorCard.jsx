@@ -8,7 +8,7 @@ export default function DoctorCard({
   specialty,
   image,
   expertise,
-  timings = "Mon-Fri: 9AM-5PM",
+  timings ,
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -25,7 +25,7 @@ export default function DoctorCard({
         <h3>{name}</h3>
         <p>{specialty}</p>
         <div className="card-actions">
-          <Button variant="outline" onClick={() => setIsExpanded(!isExpanded)}>
+          <Button  variant="outline" onClick={() => setIsExpanded(!isExpanded)}>
             {isExpanded ? "Show Less" : "Read More"}
             <FaChevronDown
               style={{
