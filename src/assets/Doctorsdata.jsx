@@ -1,17 +1,5 @@
 export const doctors = [
   {
-    name: 'Dr. Sarah Johnson',
-    specialty: 'Cardiologist',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300',
-    expertise: [
-      'Interventional Cardiology',
-      'Heart Failure Management',
-      'Cardiac Rehabilitation',
-      'Preventive Cardiology'
-    ],
-    timings: 'Everyday morning except Sunday, 8:30 AM - 10:00 AM'
-  },
-  {
     name: 'Dr. Javaid Muzamil',
     specialty: 'Medical Oncology',
     image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300',
