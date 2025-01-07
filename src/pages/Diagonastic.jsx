@@ -2,59 +2,8 @@ import { motion } from "framer-motion";
 import styles from "../styles/Diagnostics.module.scss";
 import { FaCheckCircle } from "react-icons/fa";
 import Button from "../components/Button";
+import { diagnosticServices } from "../assets/DiagnosticsData";
 
-const diagnosticServices = [
-  {
-    title: "Full Body Checkup",
-    description:
-      "Comprehensive health screening with detailed analysis of all major body systems.",
-    image:
-      "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&q=80&w=500",
-    category: "Premium",
-    features: [
-      "Complete Blood Count",
-      "Liver Function Test",
-      "Kidney Function Test",
-      "Cardiac Risk Assessment",
-    ],
-    price: "299",
-  },
-  {
-    title: "Advanced Imaging",
-    description:
-      "State-of-the-art imaging services using the latest technology for accurate diagnosis.",
-    image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=500",
-    category: "Specialized",
-    features: ["MRI Scan", "3D CT Scan", "Ultrasound", "X-Ray Services"],
-    price: "399",
-  },
-  {
-    title: "Cardiac Screening",
-    description:
-      "Comprehensive heart health assessment with advanced diagnostic tools.",
-    image:
-      "https://images.unsplash.com/photo-1628348070889-cb656235b4eb?auto=format&fit=crop&q=80&w=500",
-    category: "Essential",
-    features: ["ECG", "Echo Cardiogram", "Stress Test", "Lipid Profile"],
-    price: "199",
-  },
-  {
-    title: "Women's Health Package",
-    description:
-      "Specialized diagnostic services focused on women's health and wellness.",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=500",
-    category: "Specialized",
-    features: [
-      "Mammography",
-      "Bone Density Scan",
-      "Gynecological Exam",
-      "Hormone Analysis",
-    ],
-    price: "249",
-  },
-];
 
 function Diagnostics() {
   return (

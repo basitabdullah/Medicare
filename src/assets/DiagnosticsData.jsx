@@ -2,7 +2,7 @@ export const diagnosticServices = [
     {
       title: "PET/CT Scan",
       description: "Advanced imaging that combines PET and CT technology for precise disease detection and monitoring.",
-      image: "https://images.unsplash.com/photo-1584555613497-9ecf9dd06f79?auto=format&fit=crop&q=80&w=500",
+      image: "https://images.unsplash.com/photo-1666214276389-393fb7dbc75c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "Advanced Imaging",
       features: [
         "Cancer Detection & Staging",
@@ -28,7 +28,7 @@ export const diagnosticServices = [
     {
       title: "24/7 Cath Lab",
       description: "State-of-the-art cardiac catheterization laboratory for emergency and planned procedures.",
-      image: "https://images.unsplash.com/photo-1631815589968-fdb09a223b3e?auto=format&fit=crop&q=80&w=500",
+      image: "https://images.unsplash.com/photo-1666214276389-393fb7dbc75c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "Cardiac Care",
       features: [
         "Angiography",
